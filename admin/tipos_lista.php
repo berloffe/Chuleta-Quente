@@ -31,7 +31,7 @@ $rows = $lista->num_rows;
                     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                     <span class="hidden-xs">ADICIONAR</span>
                 </a>
-                </th>
+                &nbsp;
             </thead>
 
             <tbody>
@@ -39,11 +39,9 @@ $rows = $lista->num_rows;
                 <tr>
                     <td class="hidden">
                         <?php echo $row['id']; ?>
-                        <span class="visible-xs"></span>
-                        <span class="hidden-xs"></span>
+
                     </td>
 
-                    <td>
                     <td>
                         <h4><?php echo $row['sigla']?></h4>
                         <span class="visible-xs"></span>
@@ -57,6 +55,14 @@ $rows = $lista->num_rows;
                         <span class="hidden-xs"></span>
                     </td>
                     <td>
+                    <a href="tipos_atualiza.php?id=<?php echo $row['id'] ?>" 
+                                role="button" 
+                                class="btn btn-success btn-block btn-xs" 
+                            >
+                                <span class="glyphicon glyphicon-refresh"></span>
+                                <span class="hidden-xs">Alterar</span>
+                    </a>
+
                         <button data-nome="<?php echo $row['rotulo'];?>" data-id="<?php echo $row['id']; ?>" class="delete btn-xs btn-block btn-danger
                                 ">
                             <span class="glyphicon glyphicon-trash"></span>
@@ -68,3 +74,43 @@ $rows = $lista->num_rows;
 
                 <?php }while($row=$lista->fetch_assoc());?>
             </tbody>
+        </table>
+    </main>
+        <!-- inicio do modal para excluir -->
+        <div class="modal fade" id="modalEdit" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Vamos deletar?</h4>
+                        <button class="close" data-dismiss="modal" type="button">
+                            &times;
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Deseja mesmo excluir o item?
+                        <h4><span class="nome text-danger"></span></h4>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" type="button" class="btn btn-danger delete-yes">
+                            Confirmar
+                        </a>
+                        <button class="btn btn-success" data-dismiss="modal">
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+            </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $('.delete').on('click',function(){
+        var nome = $(this).data('nome'); //busca o nome com a descrição (data-nome)
+        var id = $(this).data('id'); // busca o id (data-id)
+        //console.log(id + ' - ' + nome); //exibe no console
+        $('span.nome').text(nome); // insere o nome do item na confirmação
+        $('a.delete-yes').attr('href','tipos_excluir.php?id='+id); //chama o arquivo php para excluir o produto
+        $('#modalEdit').modal('show'); // chamar o modal
+    });
+</script>
