@@ -2,7 +2,7 @@
 include 'conn/connect.php';
 $idTipo = $_GET['tipo_id'];
 $rotulo = $_GET['rotulo'];
-$listaPorTipo = $conn->query("select * from vw_produtos where tipo_id = $idTipo");
+$listaPorTipo = $conn->query("select * from vw_produtos where tipo_id = $idTipo;");
 $rowPorTipo = $listaPorTipo->fetch_assoc();
 $numLinhas = $listaPorTipo->num_rows;
 ?>
@@ -19,8 +19,8 @@ $numLinhas = $listaPorTipo->num_rows;
 </head>
 <body class="fundofixo">
     <?php include "menu_publico.php"; ?>
-    <div class="container">
- 
+    <div class="container"></div>
+    
 <!-- Mostrar se a consulta retornar vazio   -->
  
 <?php if($numLinhas == 0){?>

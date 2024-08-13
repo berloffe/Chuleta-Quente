@@ -54,7 +54,7 @@ $rows = $lista->num_rows;
                         <span class="hidden-xs"></span>
                     </td>
                     <td>
-                    <a href="tipos_atualiza.php?id=<?php echo $row['id'] ?>" 
+                    <a href="usuarios_atualiza.php?id=<?php echo $row['id'] ?>" 
                                 role="button" 
                                 class="btn btn-success btn-block btn-xs" 
                             >
@@ -109,7 +109,7 @@ $rows = $lista->num_rows;
         var id = $(this).data('id'); // busca o id (data-id)
         //console.log(id + ' - ' + nome); //exibe no console
         $('span.nome').text(nome); // insere o nome do item na confirmação
-        $('a.delete-yes').attr('href','tipos_excluir.php?id='+id); //chama o arquivo php para excluir o produto
+        $('a.delete-yes').attr('href','usuarios_excluir.php?id='+id); //chama o arquivo php para excluir o produto
         $('#modalEdit').modal('show'); // chamar o modal
     });
 </script>

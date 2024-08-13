@@ -5,8 +5,8 @@ $rows_tipos = $lista_tipos->fetch_all();
  
 <!-- bootstrap -->
 <!-- abre a barra de navegação -->
-<nav class="navbar navbar-expanded-md navbar-fixed-top navbar-light navbar-inverse">
-    <div class="conteinar-fluid">
+<nav class="navbar navbar-expanded-md navbar-top navbar-light navbar-inverse">
+    <div class="container-fluid">
         <!-- agrupamento Mobile -->
         <div class="navbar-header">
             <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#menupublico" aria-expanded="false">
@@ -16,9 +16,10 @@ $rows_tipos = $lista_tipos->fetch_all();
                 <span class="icon-bar"></span>
             </button>
             <a href="../index.php" class="navbar-brand">
-                <img src="../images/logo-chuleta.png" alt="Logotipo Chuleta Quente">
+                <img src="../images/" alt="Logotipo Chuleta Quente">
             </a>
         </div>
+        
         <!-- fecha agrupamento mobile -->
         <!-- nav direita -->
         <div class="collapse navbar-collapse" id="menupublico">
@@ -29,15 +30,19 @@ $rows_tipos = $lista_tipos->fetch_all();
                     </a>
                 </li>
                 <li >
-                    <a href="../index.php#destaques">DESTAQUES</a>
+                    <a href="index.php#destaques">Destaques</a>
                 </li>
                 <li>
-                    <a href="../index.php#produtos">PRODUTOS</a>
+                    <a href="index.php#produtos">Produtos</a>
                 </li>
+                <li>
+                    <a  href="reserva.php" style="color:#FFA500">Realizar Reserva</a>
+                </li>
+                
                 <!-- Dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        TIPOS
+                        Tipos
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
@@ -52,7 +57,7 @@ $rows_tipos = $lista_tipos->fetch_all();
                 </li>
                 <li>
                     <!-- FIM do dropdown -->
-                        <a href="index.php#contato">CONTATO</a>
+                        <a href="index.php#contato">Contato</a>
                         <!-- inicio formulário de busca -->
                         <form action="produtos_busca.php" method="get" name="form-busca"
                         id="form-busca" class="navbar-form navbar-left" role="search">
@@ -76,4 +81,10 @@ $rows_tipos = $lista_tipos->fetch_all();
             </ul>
         </div>
     </div>
+    <div class="marquee">
+        <a href="reserva.php"> 
+           <marquee behavior="scroll" width="1940" height="50" direction="right" bgcolor="#FFA500">“Faça sua reserva agora e ganhe 50% de desconto no rodízio do titular e 15% de desconto em todas as bebidas para reservas com mais de 4 pessoas!”
+           </marquee>
+        </a>
+    </div> 
 </nav>

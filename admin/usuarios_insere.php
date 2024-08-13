@@ -4,7 +4,7 @@ include '../conn/connect.php';
 // implementação back-end a partir daqui...
 if ($_POST) {
     $login = $_POST['login'];
-    $senha = $_POST['senha'];
+    $senha = md5($_POST['senha']);
     $insereUser = "insert into usuarios (login, senha) values ('$login', '$senha')";
     $resultado = $conn->query($insereUser);
     if(mysqli_insert_id($conn)) {
@@ -61,7 +61,7 @@ if ($_POST) {
 
                             <br>
                             <input type="submit" name="enviar" id="enviar" class="btn btn-danger btn-block"
-                                value="Cadastrar novo tipo">
+                                value="Cadastrar novo usuário">
                         </form>
                     </div>
                 </div>
