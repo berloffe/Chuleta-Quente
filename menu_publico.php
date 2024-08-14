@@ -36,7 +36,7 @@ $rows_tipos = $lista_tipos->fetch_all();
                     <a href="index.php#produtos">Produtos</a>
                 </li>
                 <li>
-                    <a  href="reserva.php" style="color:#FFA500">Realizar Reserva</a>
+                    <a  href="reservas.php" style="color:#FFA500">Realizar Reserva</a>
                 </li>
                 
                 <!-- Dropdown -->
@@ -82,7 +82,7 @@ $rows_tipos = $lista_tipos->fetch_all();
         </div>
     </div>
     <div class="marquee">
-        <a href="reserva.php"> 
+        <a href="reservas.php"> 
            <marquee behavior="scroll" width="1940" height="50" direction="right" bgcolor="#FFA500">“Faça sua reserva agora e ganhe 50% de desconto no rodízio do titular e 15% de desconto em todas as bebidas para reservas com mais de 4 pessoas!”
            </marquee>
         </a>
